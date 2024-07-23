@@ -5,7 +5,7 @@ This is a Laravel-based API for managing tasks.
 ## Setup
 
 1. Clone the repository
-2. Run composer install
+2. Run `composer install`
 3. Copy `.env.example` to `.env` and configure your database
 4. Run `php artisan migrate`
 5. Run `php artisan serve`
