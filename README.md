@@ -14,7 +14,7 @@ This is a Laravel-based API for managing tasks.
 
 The full API documentation is available as a Postman collection:
 
-[Task Manager API Postman Collection](https://documenter.getpostman.com/view/28699003/2sA3kVmMkk)
+[Task Manager API Postman Collection](https://documenter.getpostman.com/view/28699003/2sA3kVmgrU)
 
 To use the API:
 
