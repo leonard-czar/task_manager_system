@@ -1,6 +1,6 @@
 # Task Manager API
 
-This is a Laravel-based API for managing tasks.
+This is a API for managing tasks.
 
 ## Setup
 
@@ -20,7 +20,7 @@ To use the API:
 
 1. Register a new user or login to get an access token
 2. Use the access token in the Authorization header for all protected routes:
-   `Authorization: Bearer your_access_token_here`
+   `Authorization: Bearer access_token_here`
 
 ## Running Tests
 
