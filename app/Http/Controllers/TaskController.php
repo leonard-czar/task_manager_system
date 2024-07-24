@@ -27,7 +27,9 @@ class TaskController extends Controller
      */
     public function store(TaskRequest $request)
     {
+        
         $task = auth()->user()->tasks()->create($request->validated());
+        // $this->authorize('create', $task);
         return response()->json(['message' =>'task was added successfully'],201);
     }
 
@@ -51,6 +53,7 @@ class TaskController extends Controller
      */
     public function update(TaskRequest $request, Task $task)
     {
+        // $this->authorize('update', $task);
         $task->update($request->validated());
         return response()->json(['message'=>'task was updated successfully']);
     }
