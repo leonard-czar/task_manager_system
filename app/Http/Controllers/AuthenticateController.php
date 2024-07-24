@@ -36,7 +36,7 @@ class AuthenticateController extends Controller
             return response()->json([
                 'error' => $e->errors(),
             ], 422);
-            
+
         } catch (\Exception $e) {
 
             return response()->json([

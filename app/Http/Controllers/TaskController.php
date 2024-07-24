@@ -27,10 +27,9 @@ class TaskController extends Controller
      */
     public function store(TaskRequest $request)
     {
-        
-        $task = auth()->user()->tasks()->create($request->validated());
-        // $this->authorize('create', $task);
-        return response()->json(['message' =>'task was added successfully'],201);
+
+        auth()->user()->tasks()->create($request->validated());
+        return response()->json(['message' => 'task was added successfully'], 201);
     }
 
     /**
@@ -53,9 +52,8 @@ class TaskController extends Controller
      */
     public function update(TaskRequest $request, Task $task)
     {
-        // $this->authorize('update', $task);
         $task->update($request->validated());
-        return response()->json(['message'=>'task was updated successfully']);
+        return response()->json(['message' => 'task was updated successfully']);
     }
 
     /**
@@ -66,8 +64,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        // $this->authorize('delete', $task);
         $task->delete();
-        return response()->json(['message'=>'task was deleted successfully']);
+        return response()->json(['message' => 'task was deleted successfully']);
     }
 }

@@ -39,14 +39,14 @@ class AuthenticationTest extends TestCase
     {
         $response = $this->postJson('/api/register', []);
 
-      
+
         $response->assertStatus(422)->assertJson([
-                'error' => [
-                    'name' => ['The name field is required.'],
-                    'email' => ['The email field is required.'],
-                    'password' => ['The password field is required.']
-                ]
-            ]);
+            'error' => [
+                'name' => ['The name field is required.'],
+                'email' => ['The email field is required.'],
+                'password' => ['The password field is required.']
+            ]
+        ]);
     }
 
     public function test_login_user()

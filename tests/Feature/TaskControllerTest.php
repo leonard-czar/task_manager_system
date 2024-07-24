@@ -21,7 +21,7 @@ class TaskControllerTest extends TestCase
 
     public function test_authenticated_user_can_list_tasks()
     {
-        $user=User::factory()->create();
+        $user = User::factory()->create();
         Task::factory()->count(3)->create(['user_id' => $user->id]);
         Sanctum::actingAs($user, ['*']);
 
@@ -150,5 +150,5 @@ class TaskControllerTest extends TestCase
         $response->assertStatus(401)
             ->assertJson(['message' => 'Unauthenticated.']);
     }
-   
+
 }
