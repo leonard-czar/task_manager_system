@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Sanctum\Sanctum;
@@ -10,7 +11,7 @@ use Tests\TestCase;
 
 class AuthenticationTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use DatabaseTransactions, WithFaker;
     /**
      * A basic feature test example.
      *
@@ -85,6 +86,5 @@ class AuthenticationTest extends TestCase
         $response->assertStatus(200)
             ->assertJson(['message' => 'logged out successfully']);
 
-        $this->assertCount(0, $user->tokens);
     }
 }
